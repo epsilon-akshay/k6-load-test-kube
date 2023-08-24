@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vegeta-deployment
+  labels:
+    app: load-test
+    name: vegeta-load-test
+    version: 1.0.0
+spec:
+  selector:
+    matchLabels:
+      app: load-test
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: load-test
+    spec:
+      containers:
+        - name: load-test-tool
+          image: peterevans/vegeta
+          ports:
+          - containerPort: 80
