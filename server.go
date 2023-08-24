@@ -10,7 +10,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		cmd := exec.Command("k6", "run", `k6-performance-test/main_test.js`)
+		cmd := exec.Command("./k6", "run", `main_test.js`)
 		pipe, err := cmd.StdoutPipe()
 		if err != nil {
 			panic(err)
