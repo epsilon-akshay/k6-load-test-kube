@@ -1,0 +1,26 @@
+# Default values for k6-load-test.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: k6-load-test
+  pullPolicy: IfNotPresent
+
+  tag: "5.0.0"
+
+nameOverride: "load-test"
+fullnameOverride: "load-test"
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    memory: "1Gi"
+    cpu: "250m"
+  limits:
+    memory: "2Gi"
+    cpu: "500m"

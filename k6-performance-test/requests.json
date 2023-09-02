@@ -1,0 +1,12 @@
+{
+  "requests": [
+    {
+      "header": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "random": "1"
+      }
+    }
+  ]
+}
